@@ -98,7 +98,7 @@ public class App {
 				System.out.println("Search Ticket with");
 				utils.getKeys(TICKETS);
 				System.out.println("------------------");
-				System.out.println("Search Users with");
+				System.out.println("Search Organization with");
 				utils.getKeys(ORGANIZATIONS);
 
 			} else {
