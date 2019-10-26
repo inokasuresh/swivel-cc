@@ -130,6 +130,10 @@ public class Utils {
 			for (Object object : fileArr) {
 				jsonObj = (JSONObject) object;
 				int submitID = ((Long) jsonObj.get("submitter_id")).intValue();
+				
+				if (jsonObj.get("assignee_id") == null) {
+					continue;
+				}
 				int assignID = ((Long) jsonObj.get("assignee_id")).intValue();
 				if (submitID == userID || assignID == userID) {
 					subjectsOfTickets.put("ticket" + count, (String) jsonObj.get("subject"));
@@ -185,7 +189,7 @@ public class Utils {
 			fileObj = readJsonFile(USERS);
 			fileArr = (JSONArray) fileObj;
 			int count = 1;
-			for (Object object : fileArr) {
+			for (Object object : fileArr) {				
 				jsonObj = (JSONObject) object;
 				if (jsonObj.get("organization_id") == null) {
 					continue;

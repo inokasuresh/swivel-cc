@@ -117,10 +117,10 @@ public class UtilsTest {
 
 	@Test
 	public void testSetTicketOrgName() throws Exception {
-		
+
 		jsonParser = new JSONParser();
 		user.setOrganization_id(102);
-		
+
 		EasyMock.expect(utilsMock.readJsonFile("org")).andReturn(jsonParser.parse(orgJson));
 		EasyMock.replay(utilsMock);
 
@@ -133,7 +133,7 @@ public class UtilsTest {
 	public void testSetTicketAssignee() throws Exception {
 		jsonParser = new JSONParser();
 		ticket.setAssignee_id(1);
-		
+
 		EasyMock.expect(utilsMock.readJsonFile("user")).andReturn(jsonParser.parse(userJson));
 		EasyMock.replay(utilsMock);
 
@@ -146,7 +146,7 @@ public class UtilsTest {
 	public void testSetTicketSubmitter() throws Exception {
 		jsonParser = new JSONParser();
 		ticket.setSubmitter_id(2);
-		
+
 		EasyMock.expect(utilsMock.readJsonFile("user")).andReturn(jsonParser.parse(userJson));
 		EasyMock.replay(utilsMock);
 
